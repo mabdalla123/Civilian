@@ -33,13 +33,34 @@
                 </header>
             @endif
 
+            
+            
             <!-- Page Content -->
-            <main>
+            @if (session()->has('message'))
+            <x-jet-modal wire:model="showData">
+                <x-slot name="title">
+                    Delete Account
+                </x-slot>
+            
+                <x-slot name="content">
+                    {{session('message')}}
+                </x-slot>
+            
+                <x-slot name="footer">
+                    yes
+                </x-slot>
+            </x-jet-modal>
+            @endif
+
+           
+                    <main>
                 {{ $slot }}
             </main>
         </div>
 
         @stack('modals')
+
+        @include('sweetalert::alert')
 
         @livewireScripts
     </body>
