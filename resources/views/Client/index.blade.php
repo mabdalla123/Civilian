@@ -272,7 +272,7 @@
                     <div class="portfolio-menu text-center mt-50">
                         <ul>
                             <li data-filter="*" class="active">ALL WORK</li>
-                            <li data-filter=".Acceptances-4">Acceptances</li>
+                            <li data-filter=".acceptances-4">Acceptances</li>
                             <li data-filter=".marketing-4">MARKETING</li>
                             <li data-filter=".planning-4">PLANNING</li>
                             <li data-filter=".research-4">RESEARCH</li>
@@ -280,14 +280,13 @@
                     </div> <!-- portfolio menu -->
                 </div>
                 <div class="col-lg-9 col-md-9">
+                    
                     <div class="row no-gutters grid mt-50">
-                        
                         @foreach ($Acceptances as $Acceptance)
-                            
-                        <div class="col-lg-4 col-sm-6 .Acceptances-4">
+                        <div class="col-lg-4 col-sm-6 acceptances-4">
                             <div class="single-portfolio">
                                 <div class="portfolio-image">
-                                    <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="">
+                                    <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="" >
                                     <div class="portfolio-overlay d-flex align-items-center justify-content-center">
                                         <div class="portfolio-content">
                                             <div class="portfolio-icon">
@@ -303,10 +302,9 @@
                                 </div>
                             </div> <!-- single portfolio -->
                         </div>
-                        
                         @endforeach
 
-                        <div class="col-lg-4 col-sm-6 marketing-4 research-4">
+                        {{-- <div class="col-lg-4 col-sm-6 marketing-4 research-4">
                             <div class="single-portfolio">
                                 <div class="portfolio-image">
                                     <img src="{{ asset('Client/assets/images/portfolio/2.png') }}" alt="">
@@ -324,8 +322,8 @@
                                     </div>
                                 </div>
                             </div> <!-- single portfolio -->
-                        </div>
-                        <div class="col-lg-4 col-sm-6 branding-4 marketing-4">
+                        </div> --}}
+                        {{-- <div class="col-lg-4 col-sm-6 branding-4 marketing-4">
                             <div class="single-portfolio">
                                 <div class="portfolio-image">
                                     <img src="{{ asset('Client/assets/images/portfolio/3.png') }}" alt="">
@@ -457,7 +455,9 @@
                                     </div>
                                 </div>
                             </div> <!-- single portfolio -->
-                        </div>
+                        </div> --}}
+
+
                     </div> <!-- row -->
                 </div>
             </div> <!-- row -->
