@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AcceptancesController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'index'])->name('Home');
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function (){

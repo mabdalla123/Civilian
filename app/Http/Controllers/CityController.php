@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\City\CreateCityRequest;
 use App\Http\Requests\City\UpdateCityRequest;
 use App\Models\City;
+use App\Policies\CityPolicy;
 use Exception;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CityController extends Controller
 {
@@ -98,13 +101,16 @@ class CityController extends Controller
     public function destroy(City $city)
     {
         //check if City used in Acceptances before delete ---to do
-        try {
-            $city->delete();
-            return redirect()->route('cities.index')->with('toast_success', 'City Is Deleted!!!');;
-        } catch (Exception) {
-             //cant be deleted ,associated with othe Table
-            return redirect()->route('cities.index')->with('toast_error', 'Error Deleteing a City!!!');
-        }
+       
+
+            try {
+                $city->delete();
+                return redirect()->route('cities.index')->with('toast_success', 'City Is Deleted!!!');;
+            } catch (Exception) {
+                //cant be deleted ,associated with othe Table
+                return redirect()->route('cities.index')->with('toast_error', 'Error Deleteing a City!!!');
+            }
+        
 
     }
 

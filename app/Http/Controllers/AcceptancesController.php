@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Acceptances;
 use App\Http\Requests\Acceptances\StoreAcceptancesRequest;
 use App\Http\Requests\Acceptances\UpdateAcceptancesRequest;
+use App\Models\Acceptances;
 use App\Models\City;
+use Carbon\Carbon;
 use Exception;
+use GuzzleHttp\Psr7\UploadedFile;
 
 class AcceptancesController extends Controller
 {
@@ -18,7 +20,7 @@ class AcceptancesController extends Controller
     public function index()
     {
         $Acceptances = Acceptances::all();
-        return view('admin.Acceptances.index',compact('Acceptances'));
+        return view('admin.Acceptances.index', compact('Acceptances'));
     }
 
     /**
@@ -29,9 +31,9 @@ class AcceptancesController extends Controller
     public function create()
     {
         //
-        
+
         $cities = City::all();
-        return view('Admin.Acceptances.Create',compact('cities'));
+        return view('Admin.Acceptances.Create', compact('cities'));
     }
 
     /**
@@ -42,12 +44,12 @@ class AcceptancesController extends Controller
      */
     public function store(StoreAcceptancesRequest $request)
     {
-        try{
-        Acceptances::create($request->all());
-        return redirect()->route('Acceptances.index')->with('toast_success', ' Acceptance is Created Succesfuly!');
-    }catch(Exception){
-        return redirect()->route('Acceptances.index')->with('toast_error', 'Error Creating  new Acceptance!');
-        
+        try {
+            Acceptances::create($request->all());
+            return redirect()->route('Acceptances.index')->with('toast_success', ' Acceptance is Created Succesfuly!');
+        } catch (Exception) {
+            return redirect()->route('Acceptances.index')->with('toast_error', 'Error Creating  new Acceptance!');
+
         }
     }
 
@@ -59,8 +61,7 @@ class AcceptancesController extends Controller
      */
     public function show(Acceptances $Acceptance)
     {
-        $cities = City::all();
-        return view('admin.Acceptances.Edit',compact('Acceptance','cities'));
+
     }
 
     /**
@@ -69,9 +70,11 @@ class AcceptancesController extends Controller
      * @param  \App\Models\Acceptances  $acceptances
      * @return \Illuminate\Http\Response
      */
-    public function edit(Acceptances $acceptances)
+    public function edit(Acceptances $Acceptance)
     {
         //
+        $cities = City::all();
+        return view('admin.Acceptances.Edit', compact('Acceptance', 'cities'));
     }
 
     /**
@@ -83,17 +86,32 @@ class AcceptancesController extends Controller
      */
     public function update(UpdateAcceptancesRequest $request, Acceptances $Acceptance)
     {
-        try{
-     $Acceptance->update($request->all());  
-     return redirect()->route('Acceptances.index')->with('toast_success', ' Acceptance Updated Succesfuly!'); 
-    }catch(Exception){
-            return redirect()->route('Acceptances.show')->with('toast_error', 'Error Updating  Acceptances!'); 
+        try {
             
+            
+            if ($request->hasFile('image_path')) {
+                //upload File
+               //dd($request);
+                $Filename  = time().'.'.$request->file('image_path')->extension(); 
+                $request->file('image_path')->move(public_path('Acceptance'),$Filename);
+                //dd($name);
+                $Acceptance->update($request->except(['image_path']));
+                $Acceptance->image_path = $Filename;
+                $Acceptance->update();
+
+            }else{
+                $Acceptance->update($request->except(['image_path']));
+
+            }
+            return redirect()->route('Acceptances.index')->with('toast_success', ' Acceptance Updated Succesfuly!');
+
+        } catch (Exception $ex) {
+            dd($ex);
+            return redirect()->route('Acceptances.show', ['Acceptance' => $Acceptance])->with('toast_error', 'Error Updating  Acceptances!');
+
         }
-    
+
     }
-
-
 
     /**
      * Remove the specified resource from storage.
@@ -103,10 +121,10 @@ class AcceptancesController extends Controller
      */
     public function destroy(Acceptances $Acceptance)
     {
-        try{
-        $Acceptance->delete();
-        return redirect()->route('Acceptances.index')->with('toast_success', 'City Is Deleted  Succesfuly!');
-        }catch(Exception){
+        try {
+            $Acceptance->delete();
+            return redirect()->route('Acceptances.index')->with('toast_success', 'City Is Deleted  Succesfuly!');
+        } catch (Exception) {
             return redirect()->route('Acceptances.index')->with('toast_error', 'Error Deleting  Acceptances!');
 
         }

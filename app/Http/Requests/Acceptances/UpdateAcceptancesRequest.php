@@ -26,7 +26,9 @@ class UpdateAcceptancesRequest extends FormRequest
         return [
             'city_id'=>'required|exists:cities,id',
             'university_name'=>'required|string',
-            'Fees'=>'required|numeric'
+            'Fees'=>'required|numeric',
+            'image_path'=>'image|mimes:png,jpg,jpeg'
+            
         ];
     }
 }

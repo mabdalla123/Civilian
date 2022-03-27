@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Acceptances extends Model
 {
     use HasFactory;
-    protected $fillable = ['city_id','university_name','Fees'];
+    protected $fillable = ['city_id','university_name','Fees','image_path'];
 
 
     public function City()

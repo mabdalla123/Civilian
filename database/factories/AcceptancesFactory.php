@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,11 +18,12 @@ class AcceptancesFactory extends Factory
      */
     public function definition()
     {
-        $usersId = User::pluck('id')->toArray();
+        $usersId = City::pluck('id')->toArray();
         return [
            'city_id'=>$this->faker->randomElement($usersId),
            'university_name'=>$this->faker->unique()->name,
-           'Fees'=>$this->faker->numberBetween(1000,10000)
+           'Fees'=>$this->faker->numberBetween(1000,10000),
+           'image_path'=>$this->faker->imageUrl
         ];
     }
 }

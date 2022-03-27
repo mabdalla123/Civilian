@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('city_id')->constrained();
             $table->string('university_name')->unique();
             $table->string('Fees');
+            $table->string('image_path');
             $table->timestamps();
         });
     }

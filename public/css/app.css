@@ -998,6 +998,9 @@ select {
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.m-auto {
+  margin: auto;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1009,10 +1012,6 @@ select {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -1088,6 +1087,12 @@ select {
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.mt-40 {
+  margin-top: 10rem;
+}
+.mt-60 {
+  margin-top: 15rem;
 }
 .block {
   display: block;
@@ -1344,10 +1349,6 @@ select {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
-.rounded-b {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
 .border {
   border-width: 1px;
 }
@@ -1368,9 +1369,6 @@ select {
 }
 .border-r {
   border-right-width: 1px;
-}
-.border-t-4 {
-  border-top-width: 4px;
 }
 .border-gray-300 {
   --tw-border-opacity: 1;
@@ -1395,17 +1393,13 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
 .border-gray-600 {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
-.border-teal-500 {
+.border-gray-400 {
   --tw-border-opacity: 1;
-  border-color: rgb(20 184 166 / var(--tw-border-opacity));
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -1458,10 +1452,6 @@ select {
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-.bg-teal-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 251 241 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -1585,6 +1575,9 @@ select {
 .pt-8 {
   padding-top: 2rem;
 }
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1651,11 +1644,11 @@ select {
 .tracking-widest {
   letter-spacing: 0.1em;
 }
-.tracking-wider {
-  letter-spacing: 0.05em;
-}
 .tracking-wide {
   letter-spacing: 0.025em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -1724,10 +1717,6 @@ select {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-.text-teal-900 {
-  --tw-text-opacity: 1;
-  color: rgb(19 78 74 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

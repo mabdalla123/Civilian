@@ -26,7 +26,8 @@ class StoreAcceptancesRequest extends FormRequest
         return [
             'city_id'=>'required|exists:cities,id',
             'university_name'=>'required|string',
-            'Fees'=>'required|numeric'
+            'Fees'=>'required|numeric',
+            'image_path'=>'required|image|mimes:png,jpg,jpeg'
         ];
     }
 }
