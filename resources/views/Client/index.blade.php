@@ -272,7 +272,7 @@
                     <div class="portfolio-menu text-center mt-50">
                         <ul>
                             <li data-filter="*" class="active">ALL WORK</li>
-                            <li data-filter=".branding-4">BRANDING</li>
+                            <li data-filter=".Acceptances-4">Acceptances</li>
                             <li data-filter=".marketing-4">MARKETING</li>
                             <li data-filter=".planning-4">PLANNING</li>
                             <li data-filter=".research-4">RESEARCH</li>
@@ -281,25 +281,31 @@
                 </div>
                 <div class="col-lg-9 col-md-9">
                     <div class="row no-gutters grid mt-50">
-                        <div class="col-lg-4 col-sm-6 branding-4 planning-4">
+                        
+                        @foreach ($Acceptances as $Acceptance)
+                            
+                        <div class="col-lg-4 col-sm-6 .Acceptances-4">
                             <div class="single-portfolio">
                                 <div class="portfolio-image">
-                                    <img src="{{ asset('Client/assets/images/portfolio/1.png') }}" alt="">
+                                    <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="">
                                     <div class="portfolio-overlay d-flex align-items-center justify-content-center">
                                         <div class="portfolio-content">
                                             <div class="portfolio-icon">
-                                                <a class="image-popup" href="{{ asset('Client/assets/images/portfolio/1.png') }}"><i class="lni lni-zoom-in"></i></a>
-                                                <img src="{{ asset('Client/assets/images/portfolio/shape.svg') }}" alt="shape" class="shape">
+                                                <a class="image-popup" href="{{ asset('Acceptance/'.$Acceptance->image_path) }}"><i class="lni lni-zoom-in"></i></a>
+                                                <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="shape" class="shape">
                                             </div>
                                             <div class="portfolio-icon">
                                                 <a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{{ asset('Client/assets/images/portfolio/shape.svg') }}" alt="shape" class="shape">
+                                                <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="shape" class="shape">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div> <!-- single portfolio -->
                         </div>
+                        
+                        @endforeach
+
                         <div class="col-lg-4 col-sm-6 marketing-4 research-4">
                             <div class="single-portfolio">
                                 <div class="portfolio-image">

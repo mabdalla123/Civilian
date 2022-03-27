@@ -6,9 +6,7 @@ use App\Http\Requests\Acceptances\StoreAcceptancesRequest;
 use App\Http\Requests\Acceptances\UpdateAcceptancesRequest;
 use App\Models\Acceptances;
 use App\Models\City;
-use Carbon\Carbon;
 use Exception;
-use GuzzleHttp\Psr7\UploadedFile;
 
 class AcceptancesController extends Controller
 {
@@ -45,12 +43,22 @@ class AcceptancesController extends Controller
     public function store(StoreAcceptancesRequest $request)
     {
         try {
-            Acceptances::create($request->all());
-            return redirect()->route('Acceptances.index')->with('toast_success', ' Acceptance is Created Succesfuly!');
-        } catch (Exception) {
-            return redirect()->route('Acceptances.index')->with('toast_error', 'Error Creating  new Acceptance!');
+
+            $Filename = time() . '.' . $request->file('image_path')->extension();
+            $request->file('image_path')->move(public_path('Acceptance'), $Filename);
+            #copy request Data To a variable so we can overwrite image path Data
+            $requestData = $request->all();
+            $requestData['image_path'] = $Filename;
+
+            Acceptances::create($requestData);
+
+            return redirect()->route('Acceptances.index')->with('toast_success', 'Acceptance Updated Succesfuly!');
+        } catch (Exception $ex) {
+
+            return redirect()->route('Acceptances.create')->with('toast_error', 'Error Creating  new Acceptance!');
 
         }
+
     }
 
     /**
@@ -87,19 +95,18 @@ class AcceptancesController extends Controller
     public function update(UpdateAcceptancesRequest $request, Acceptances $Acceptance)
     {
         try {
-            
-            
+
             if ($request->hasFile('image_path')) {
                 //upload File
-               //dd($request);
-                $Filename  = time().'.'.$request->file('image_path')->extension(); 
-                $request->file('image_path')->move(public_path('Acceptance'),$Filename);
+                //dd($request);
+                $Filename = time() . '.' . $request->file('image_path')->extension();
+                $request->file('image_path')->move(public_path('Acceptance'), $Filename);
                 //dd($name);
                 $Acceptance->update($request->except(['image_path']));
                 $Acceptance->image_path = $Filename;
                 $Acceptance->update();
 
-            }else{
+            } else {
                 $Acceptance->update($request->except(['image_path']));
 
             }
