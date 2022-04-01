@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     
     <!--====== Title ======-->
-    <title>Smash - Bootstrap Business Template</title>
+    <title>{{ env('APP_NAME') }}</title>
     
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,7 +82,7 @@
                                 <li class="nav-item active"><a class="page-scroll" href="#home">home</a></li>
                                 <li class="nav-item"><a class="page-scroll" href="#services">Services</a></li>
                                 <li class="nav-item"><a class="page-scroll" href="#portfolio">Portfolio</a></li>
-                                <li class="nav-item"><a class="page-scroll" href="#pricing">Pricing</a></li>
+                                {{-- <li class="nav-item"><a class="page-scroll" href="#pricing">Pricing</a></li> --}}
                                 <li class="nav-item"><a class="page-scroll" href="#about">About</a></li>
                                 <li class="nav-item"><a class="page-scroll" href="#team">Team</a></li>
                                 <li class="nav-item"><a class="page-scroll" href="#contact">Contact</a></li>
@@ -91,7 +91,7 @@
                         
                         <div class="navbar-btn d-none d-sm-inline-block">
                             <ul>
-                                <li><a class="solid" href="#">Download</a></li>
+                                {{-- <li><a class="solid" href="#">Download</a></li> --}}
                             </ul>
                         </div>
                     </nav> <!-- navbar -->
@@ -106,11 +106,11 @@
 
     <section id="home" class="slider_area">
         <div id="carouselThree" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
+            {{-- <ol class="carousel-indicators">
                 <li data-target="#carouselThree" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselThree" data-slide-to="1"></li>
                 <li data-target="#carouselThree" data-slide-to="2"></li>
-            </ol>
+            </ol> --}}
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -118,11 +118,11 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="slider-content">
-                                    <h1 class="title">Business is Now Digital</h1>
-                                    <p class="text">We blend insights and strategy to create digital products for forward-thinking organisations.</p>
+                                    <h1 class="title">Our Business is Now Digital</h1>
+                                    <p class="text">We blend insights and strategy to create digital opportunities for forward-thinking individuals.</p>
                                     <ul class="slider-btn rounded-buttons">
                                         <li><a class="main-btn rounded-one" href="#">GET STARTED</a></li>
-                                        <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li>
+                                        {{-- <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                     </div> <!-- slider-imgae box -->
                 </div> <!-- carousel-item -->
 
-                <div class="carousel-item">
+                {{-- <div class="carousel-item">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
@@ -155,9 +155,9 @@
                             <img src="{{ asset('Client/assets/images/slider/2.png') }}" alt="Hero">
                         </div> <!-- slider-imgae -->
                     </div> <!-- slider-imgae box -->
-                </div> <!-- carousel-item -->
+                </div> <!-- carousel-item --> --}}
 
-                <div class="carousel-item">
+                {{-- <div class="carousel-item">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
@@ -177,15 +177,15 @@
                             <img src="{{ asset('Client/assets/images/slider/3.png') }}" alt="Hero">
                         </div> <!-- slider-imgae -->
                     </div> <!-- slider-imgae box -->
-                </div> <!-- carousel-item -->
+                </div> <!-- carousel-item --> --}}
             </div>
 
-            <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
+            {{-- <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
                 <i class="lni lni-arrow-left"></i>
             </a>
             <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next">
                 <i class="lni lni-arrow-right"></i>
-            </a>
+            </a> --}}
         </div>
     </section>
 
@@ -207,14 +207,14 @@
                 <div class="col-lg-4 col-md-7 col-sm-9">
                     <div class="single-features mt-40">
                         <div class="features-title-icon d-flex justify-content-between">
-                            <h4 class="features-title"><a href="#">Graphics Design</a></h4>
+                            <h4 class="features-title"><a href="#">Acceptances </a></h4>
                             <div class="features-icon">
                                 <i class="lni lni-brush"></i>
                                 <img class="shape" src="{{ asset('Client/assets/images/f-shape-1.svg') }}" alt="Shape">
                             </div>
                         </div>
                         <div class="features-content">
-                            <p class="text">Short description for the ones who look for something new. Short description for the ones who look for something new.</p>
+                            <p class="text">We Provied Acceptance in Turkish Colleages for a different student types such as underGraduate, Postgraduate</p>
                             <a class="features-btn" href="#">LEARN MORE</a>
                         </div>
                     </div> <!-- single features -->
@@ -262,8 +262,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-10">
                     <div class="section-title text-center pb-10">
-                        <h3 class="title">Featured Works</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                        <h3 class="title">Our Services</h3>
+                        <p class="text">Stop wasting time and money Searching for what you Can Find Here!</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -273,7 +273,7 @@
                         <ul>
                             <li data-filter="*" class="active">ALL WORK</li>
                             <li data-filter=".acceptances-4">Acceptances</li>
-                            <li data-filter=".marketing-4">MARKETING</li>
+                            <li data-filter=".realestate-4">Real Estate</li>
                             <li data-filter=".planning-4">PLANNING</li>
                             <li data-filter=".research-4">RESEARCH</li>
                         </ul>
@@ -286,7 +286,29 @@
                         <div class="col-lg-4 col-sm-6 acceptances-4">
                             <div class="single-portfolio">
                                 <div class="portfolio-image">
-                                    <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="" >
+                                    <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="" width="200" height="200">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon">
+                                                <a class="image-popup" href="{{ asset('Acceptance/'.$Acceptance->image_path) }}"><i class="lni lni-zoom-in"></i></a>
+                                                <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="shape" class="shape">
+                                            </div>
+                                            <div class="portfolio-icon">
+                                                <a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="shape" class="shape">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- single portfolio -->
+                        </div>
+                        @endforeach
+
+                        @foreach ($Acceptances as $Acceptance)
+                        <div class="col-lg-4 col-sm-6 realestate-4">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image">
+                                    <img src="{{ asset('Acceptance/'.$Acceptance->image_path) }}" alt="" width="200" height="200">
                                     <div class="portfolio-overlay d-flex align-items-center justify-content-center">
                                         <div class="portfolio-content">
                                             <div class="portfolio-icon">
@@ -468,13 +490,13 @@
     
     <!--====== PRINICNG START ======-->
 
-    <section id="pricing" class="pricing-area ">
+    {{-- <section id="pricing" class="pricing-area ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-10">
                     <div class="section-title text-center pb-25">
                         <h3 class="title">Pricing Plans</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                        <p class="text">Stop wasting time and money Searching in a website's that doesn't get results. Happiness guaranteed!</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -543,7 +565,7 @@
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
-    </section>
+    </section> --}}
 
     <!--====== PRINICNG ENDS ======-->
     
@@ -772,7 +794,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="team-image">
-                            <img src="assets/images/team-2.jpg" alt="Team">
+                            <img src="{{ asset('Client/assets/images/team-2.jpg') }}" alt="Team">
                         </div>
                         <div class="team-content">
                             <div class="team-social">

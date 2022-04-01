@@ -18,6 +18,9 @@
                     <x-jet-nav-link href="{{ route('Acceptances.index') }}" :active="request()->routeIs('Acceptances.index')">
                         {{ __('Acceptances') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('realestate.index') }}" :active="request()->routeIs('realestate.index')">
+                        {{ __('Real Estate Management') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -108,6 +111,10 @@
                             </div>
                             <x-jet-dropdown-link href="{{ route('cities.index') }}">
                                 {{ __('Manage Cities') }}
+                            </x-jet-dropdown-link>
+                            
+                            <x-jet-dropdown-link href="{{ route('realestatetypes.index') }}">
+                                {{ __('Manage RealEstate Types') }}
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())

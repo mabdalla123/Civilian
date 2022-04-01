@@ -3,6 +3,10 @@
 use App\Http\Controllers\AcceptancesController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\RealEstateController;
+use App\Http\Controllers\RealEstateTypeController;
+use App\Models\RealEstateFile;
+use App\Models\RealEstateType;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +35,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
         Route::resource('/cities',CityController::class);
     
         Route::resource('/Acceptances',AcceptancesController::class);
+
+        Route::resource('/realestatetypes',RealEstateTypeController::class);
+
+        Route::resource('/realestate',RealEstateController::class);
+
+        Route::delete('/realestatefile/{realEstateFile}',[RealEstateFile::class,'destroy'])->name('realestatefile.destroy');
+
     });
 
 });
