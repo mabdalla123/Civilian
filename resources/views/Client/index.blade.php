@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{ asset('Client/assets/images/favicon.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('Client/assets/images/logo.png') }}" type="image/png">
         
     <!--====== Magnific Popup CSS ======-->
     <link rel="stylesheet" href="{{ asset('Client/assets/css/magnific-popup.css') }}">
@@ -68,7 +68,7 @@
                     <nav class="navbar navbar-expand-lg">
                        
                         <a class="navbar-brand" href="#">
-                            <img src="{{ asset('Client/assets/images/logo.svg') }}" alt="Logo">
+                            <img src="{{ asset('Client/assets/images/logo.svg') }}"  width="75" height="75"  alt="Logo">
                         </a>
                         
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
@@ -222,14 +222,14 @@
                 <div class="col-lg-4 col-md-7 col-sm-9">
                     <div class="single-features mt-40">
                         <div class="features-title-icon d-flex justify-content-between">
-                            <h4 class="features-title"><a href="#">Website Design</a></h4>
+                            <h4 class="features-title"><a href="#">Real Estate</a></h4>
                             <div class="features-icon">
                                 <i class="lni lni-layout"></i>
                                 <img class="shape" src="{{ asset('Client/assets/images/f-shape-1.svg') }}" alt="Shape">
                             </div>
                         </div>
                         <div class="features-content">
-                            <p class="text">Short description for the ones who look for something new. Short description for the ones who look for something new.</p>
+                            <p class="text">are you looking to owen a real estate in Turkey,or you are smart enough to invest  money in Turkey ,we give you a variety of choices to choose from.</p>
                             <a class="features-btn" href="#">LEARN MORE</a>
                         </div>
                     </div> <!-- single features -->
@@ -947,7 +947,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="footer-logo text-center">
-                        <a class="mt-30" href="{{ route('Home') }}"><img src="{{ asset('Client/assets/images/logo.svg') }}" alt="Logo"></a>
+                        <a class="mt-30" href="{{ route('Home') }}"><img src="{{ asset('Client/assets/images/logo.svg') }}" width="75" height="75" alt="Logo"></a>
                     </div> <!-- footer logo -->
                     <ul class="social text-center mt-60">
                         <li><a href="https://facebook.com/uideckHQ"><i class="lni lni-facebook-filled"></i></a></li>
